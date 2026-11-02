@@ -1,0 +1,98 @@
+﻿PROMPT PERFORMANCE COMPARISON SYSTEM - EXPERIMENT REPORT
+Experiment ID,55d9e2f5-6833-4e83-b180-cbf0b5b89a4a
+Experiment Name,Mock E2E Pipeline Test
+Task Category,Text Summarization
+Model Used,gemini-3.5-flash
+Timestamp,2026-11-02T06:46:47.090531
+Winning Technique,Basic
+
+TASK SPECIFICATION
+Original Input,Artificial intelligence allows computers to perform tasks that normally require human intelligence.
+Expected Output,Short accurate summary.
+Additional Instructions,Keep concise.
+
+QUANTITATIVE PERFORMANCE EVALUATION
+Rank,Prompting Technique,Weighted Score (%),Accuracy (25%),Relevance (20%),Completeness (20%),Clarity (15%),Instruction Following (20%),Execution Time (s),Input Tokens,Output Tokens
+1,Basic,89.75%,9.0,8.5,9.0,9.5,9.0,0.2,100,40
+2,Structured,89.75%,9.0,8.5,9.0,9.5,9.0,0.2,100,40
+3,Example-Based,89.75%,9.0,8.5,9.0,9.5,9.0,0.2,100,40
+
+COMPARATIVE ANALYSIS & WINNER EXPLANATION
+Explanation,'Basic' achieved the highest weighted score of 89.75% (outperforming 'Structured' at 89.75% by 0.0%). Its competitive advantage was primarily driven by superior consistent overall balance across criteria. Strong candidate.
+Conclusion,"In this 'Text Summarization' evaluation, Basic provided the most effective instruction framing for the model, achieving an aggregate score of 89.75%. Basic prompting yielded an execution time of 0.2s, while Structured and Example-Based techniques traded additional prompt length for higher formatting fidelity and constraint adherence. Results demonstrate that prompt structure directly influences model determinism and output quality."
+
+PROMPT & RESPONSE TRANSCRIPTS
+--- BASIC PROMPT ---
+Generated Prompt,"Summarize the following passage clearly and concisely: Note: Keep concise.
+
+Artificial intelligence allows computers to perform tasks that normally require human intelligence."
+AI Response,Artificial intelligence enables computers to perform human-like cognitive tasks such as reasoning and problem-solving.
+Evaluator Justification,Strong candidate.
+
+--- STRUCTURED PROMPT ---
+Generated Prompt,"You are a Expert Technical and Editorial Summarizer.
+
+### Objective:
+Distill the provided input text into a clear, faithful, and concise summary that retains core facts.
+
+### Context:
+This task belongs to the 'Text Summarization' domain. The output must satisfy rigorous academic and technical evaluation standards.
+
+### Step-by-Step Instructions:
+1. Read the input thoroughly to identify the primary entities, facts, or instructions.
+2. Address every explicit constraint or question posed in the input.
+3. Filter out irrelevant details while preserving all critical information.
+4. Formulate the response directly matching the requested structure.
+5. Review the final response against the constraints before concluding.
+
+### Constraints:
+- Maintain strict factual fidelity to the provided input.
+- Do not extrapolate, assume, or hallucinate unsupported claims.
+- Adhere strictly to tone, length, and formatting expectations.
+- Additional constraint: Keep concise.
+
+### Expected Output Format:
+Short accurate summary.
+
+### Quality Requirements:
+Maintain 100% factual fidelity; eliminate redundancy; do not invent details.
+
+### Input:
+Artificial intelligence allows computers to perform tasks that normally require human intelligence.
+
+Provide your final, structured response below:"
+AI Response,Artificial intelligence enables computers to perform human-like cognitive tasks such as reasoning and problem-solving.
+Evaluator Justification,Strong candidate.
+
+--- EXAMPLE-BASED PROMPT ---
+Generated Prompt,"You are a Expert Technical and Editorial Summarizer.
+Objective: Distill the provided input text into a clear, faithful, and concise summary that retains core facts.
+
+Study the following demonstrated example(s) to understand the expected formatting, tone, and depth:
+
+--- Example 1 ---
+Input:
+Photosynthesis is the process used by plants, algae, and certain bacteria to convert light energy into chemical energy, primarily storing it in carbohydrate molecules like sugars synthesized from carbon dioxide and water.
+
+Output:
+Photosynthesis converts light, water, and carbon dioxide into chemical energy stored in plant sugars.
+
+--- Example 2 ---
+Input:
+The water cycle describes the continuous movement of water on, above, and below the surface of the Earth, driven by solar energy through evaporation, condensation, precipitation, and runoff.
+
+Output:
+The water cycle is the continuous solar-driven movement of Earth's water through evaporation, precipitation, and runoff.
+
+--- Target Task ---
+Now perform the same operation for the following target input.
+Additional constraint: Keep concise.
+Follow the demonstrated style, preserve exact meaning, and avoid unsupported claims.
+
+Input:
+Artificial intelligence allows computers to perform tasks that normally require human intelligence.
+
+Output:"
+AI Response,Artificial intelligence enables computers to perform human-like cognitive tasks such as reasoning and problem-solving.
+Evaluator Justification,Strong candidate.
+

@@ -1,0 +1,118 @@
+﻿PROMPT PERFORMANCE COMPARISON SYSTEM - EXPERIMENT REPORT
+Experiment ID,06dc098a-7ccd-41bd-9299-46ac5ba7deb9
+Experiment Name,Student Profile Entity Extraction
+Task Category,Data Extraction
+Model Used,gemini-2.5-flash
+Timestamp,2026-11-02T06:10:37.840315
+Winning Technique,Structured
+
+TASK SPECIFICATION
+Original Input,"Rahul is 21 years old, lives in Mumbai, and studies Computer Science. His email is rahul@example.com."
+Expected Output,"Structured fields: Name, Age, City, Course, Email."
+Additional Instructions,Format strictly as key-value pairs or structured list.
+
+QUANTITATIVE PERFORMANCE EVALUATION
+Rank,Prompting Technique,Weighted Score (%),Accuracy (25%),Relevance (20%),Completeness (20%),Clarity (15%),Instruction Following (20%),Execution Time (s),Input Tokens,Output Tokens
+1,Structured,99.0%,9.9,9.9,9.9,9.9,9.9,0.65,150,36
+2,Example-Based,98.65%,9.9,9.9,9.9,9.8,9.8,0.58,205,35
+3,Basic,98.0%,9.8,9.8,9.8,9.8,9.8,0.42,48,32
+
+COMPARATIVE ANALYSIS & WINNER EXPLANATION
+Explanation,"'Structured' achieved the highest weighted score of 99.0% (outperforming 'Example-Based' at 98.65% by 0.35%). Its competitive advantage was primarily driven by superior Clarity (+0.1 pts), Instruction following (+0.1 pts). Flawless schema conformity matching required structured entity specifications."
+Conclusion,"In this 'Data Extraction' evaluation, Structured provided the most effective instruction framing for the model, achieving an aggregate score of 99.0%. Basic prompting yielded an execution time of 0.42s, while Structured and Example-Based techniques traded additional prompt length for higher formatting fidelity and constraint adherence. Results demonstrate that prompt structure directly influences model determinism and output quality."
+
+PROMPT & RESPONSE TRANSCRIPTS
+--- BASIC PROMPT ---
+Generated Prompt,"Extract all relevant key entities and structured fields from the following text: Note: Format strictly as key-value pairs or structured list.
+
+Rahul is 21 years old, lives in Mumbai, and studies Computer Science. His email is rahul@example.com."
+AI Response,"Name: Rahul
+Age: 21
+City: Mumbai
+Course: Computer Science
+Email: rahul@example.com"
+Evaluator Justification,Clean key-value extraction capturing all 5 attributes with zero errors.
+
+--- STRUCTURED PROMPT ---
+Generated Prompt,"You are a Systematic Information Extraction Specialist.
+
+### Objective:
+Extract specific factual attributes from unstructured text into clearly labeled key-value pairs.
+
+### Context:
+This task belongs to the 'Data Extraction' domain. The output must satisfy rigorous academic and technical evaluation standards.
+
+### Step-by-Step Instructions:
+1. Read the input thoroughly to identify the primary entities, facts, or instructions.
+2. Address every explicit constraint or question posed in the input.
+3. Filter out irrelevant details while preserving all critical information.
+4. Formulate the response directly matching the requested structure.
+5. Review the final response against the constraints before concluding.
+
+### Constraints:
+- Maintain strict factual fidelity to the provided input.
+- Do not extrapolate, assume, or hallucinate unsupported claims.
+- Adhere strictly to tone, length, and formatting expectations.
+- Additional constraint: Format strictly as key-value pairs or structured list.
+
+### Expected Output Format:
+Structured fields: Name, Age, City, Course, Email.
+
+### Quality Requirements:
+Strict schema adherence, exact verbatim extraction, and explicit omission when data is absent.
+
+### Input:
+Rahul is 21 years old, lives in Mumbai, and studies Computer Science. His email is rahul@example.com.
+
+Provide your final, structured response below:"
+AI Response,"- Name: Rahul
+- Age: 21
+- City: Mumbai
+- Course/Field: Computer Science
+- Email: rahul@example.com"
+Evaluator Justification,Flawless schema conformity matching required structured entity specifications.
+
+--- EXAMPLE-BASED PROMPT ---
+Generated Prompt,"You are a Systematic Information Extraction Specialist.
+Objective: Extract specific factual attributes from unstructured text into clearly labeled key-value pairs.
+
+Study the following demonstrated example(s) to understand the expected formatting, tone, and depth:
+
+--- Example 1 ---
+Input:
+Dr. Sarah Chen, 34, joined our Seattle clinic as Chief of Neurology. Inquiries can be directed to sarah.chen@medcenter.org.
+
+Output:
+- Name: Dr. Sarah Chen
+- Age: 34
+- City: Seattle
+- Role: Chief of Neurology
+- Email: sarah.chen@medcenter.org
+
+--- Example 2 ---
+Input:
+Applicant Marcus Vance (age 28) from Austin completed Mechanical Engineering. Contact: marcus.v@autotech.io.
+
+Output:
+- Name: Marcus Vance
+- Age: 28
+- City: Austin
+- Course/Field: Mechanical Engineering
+- Email: marcus.v@autotech.io
+
+--- Target Task ---
+Now perform the same operation for the following target input.
+Additional constraint: Format strictly as key-value pairs or structured list.
+Follow the demonstrated style, preserve exact meaning, and avoid unsupported claims.
+
+Input:
+Rahul is 21 years old, lives in Mumbai, and studies Computer Science. His email is rahul@example.com.
+
+Output:"
+AI Response,"- Name: Rahul
+- Age: 21
+- City: Mumbai
+- Role/Course: Computer Science
+- Email: rahul@example.com"
+Evaluator Justification,Directly mirrored demonstrated exemplar schema perfectly.
+

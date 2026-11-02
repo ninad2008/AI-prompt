@@ -1,0 +1,91 @@
+﻿PROMPT PERFORMANCE COMPARISON SYSTEM - EXPERIMENT REPORT
+Experiment ID,24f71e5c-3215-46e8-927a-08e5d824e116
+Experiment Name,College Cybersecurity Guidance
+Task Category,Content Generation
+Model Used,gemini-2.5-flash
+Timestamp,2026-11-02T06:10:37.794387
+Winning Technique,Structured
+
+TASK SPECIFICATION
+Original Input,Write a short paragraph explaining why cybersecurity is important for college students.
+Expected Output,"A relevant paragraph mentioning digital safety, privacy, and responsible internet usage."
+Additional Instructions,Emphasize actionable student habits such as strong passwords and phishing awareness.
+
+QUANTITATIVE PERFORMANCE EVALUATION
+Rank,Prompting Technique,Weighted Score (%),Accuracy (25%),Relevance (20%),Completeness (20%),Clarity (15%),Instruction Following (20%),Execution Time (s),Input Tokens,Output Tokens
+1,Structured,96.75%,9.6,9.8,9.6,9.7,9.7,0.88,160,68
+2,Example-Based,92.95%,9.3,9.4,9.2,9.4,9.2,0.79,210,64
+3,Basic,87.6%,8.8,9.2,8.5,8.8,8.5,0.62,52,58
+
+COMPARATIVE ANALYSIS & WINNER EXPLANATION
+Explanation,"'Structured' achieved the highest weighted score of 96.75% (outperforming 'Example-Based' at 92.95% by 3.8%). Its competitive advantage was primarily driven by superior Accuracy (+0.3 pts), Relevance (+0.4 pts), Completeness (+0.4 pts), Clarity (+0.3 pts), Instruction following (+0.5 pts). Exceptional vocabulary, direct relevance to university workflows, and explicit mention of MFA and phishing."
+Conclusion,"In this 'Content Generation' evaluation, Structured provided the most effective instruction framing for the model, achieving an aggregate score of 96.75%. Basic prompting yielded an execution time of 0.62s, while Structured and Example-Based techniques traded additional prompt length for higher formatting fidelity and constraint adherence. Results demonstrate that prompt structure directly influences model determinism and output quality."
+
+PROMPT & RESPONSE TRANSCRIPTS
+--- BASIC PROMPT ---
+Generated Prompt,"Generate content according to this prompt: Note: Emphasize actionable student habits such as strong passwords and phishing awareness.
+
+Write a short paragraph explaining why cybersecurity is important for college students."
+AI Response,"Cybersecurity is very important for college students because universities are prime targets for cyberattacks. Students manage sensitive personal data, financial aid records, and course assignments online. Using strong passwords and avoiding suspicious links helps prevent identity theft and ensures their academic progress remains secure."
+Evaluator Justification,"Addresses core topic and offers sound advice, though formatting is standard."
+
+--- STRUCTURED PROMPT ---
+Generated Prompt,"You are a Professional Content Strategist and Copywriter.
+
+### Objective:
+Produce well-structured, engaging, and purposeful prose tailored strictly to the prompt.
+
+### Context:
+This task belongs to the 'Content Generation' domain. The output must satisfy rigorous academic and technical evaluation standards.
+
+### Step-by-Step Instructions:
+1. Read the input thoroughly to identify the primary entities, facts, or instructions.
+2. Address every explicit constraint or question posed in the input.
+3. Filter out irrelevant details while preserving all critical information.
+4. Formulate the response directly matching the requested structure.
+5. Review the final response against the constraints before concluding.
+
+### Constraints:
+- Maintain strict factual fidelity to the provided input.
+- Do not extrapolate, assume, or hallucinate unsupported claims.
+- Adhere strictly to tone, length, and formatting expectations.
+- Additional constraint: Emphasize actionable student habits such as strong passwords and phishing awareness.
+
+### Expected Output Format:
+A relevant paragraph mentioning digital safety, privacy, and responsible internet usage.
+
+### Quality Requirements:
+Cohesive flow, compelling topic sentences, active voice, and clear relevance to the intended audience.
+
+### Input:
+Write a short paragraph explaining why cybersecurity is important for college students.
+
+Provide your final, structured response below:"
+AI Response,"Cybersecurity awareness is critical for college students who navigate interconnected campus networks, cloud portals, and financial aid systems daily. Practicing rigorous digital hygiene—such as enabling multi-factor authentication, curating unique passphrases, and scrutinizing phishing emails—shields students from identity fraud and credential compromise. Ultimately, proactive cyber defense safeguards both personal privacy and uninterrupted academic achievement."
+Evaluator Justification,"Exceptional vocabulary, direct relevance to university workflows, and explicit mention of MFA and phishing."
+
+--- EXAMPLE-BASED PROMPT ---
+Generated Prompt,"You are a Professional Content Strategist and Copywriter.
+Objective: Produce well-structured, engaging, and purposeful prose tailored strictly to the prompt.
+
+Study the following demonstrated example(s) to understand the expected formatting, tone, and depth:
+
+--- Example 1 ---
+Input:
+Write a short paragraph explaining why hydration is important for athletes.
+
+Output:
+Hydration is essential for athletic performance because water regulates body temperature, lubricates joints, and transports vital nutrients throughout the bloodstream. Even mild dehydration can lead to premature fatigue, muscle cramps, and reduced cognitive focus during strenuous exercise. Maintaining optimal fluid and electrolyte balance before, during, and after physical exertion ensures sustained endurance and promotes faster muscular recovery.
+
+--- Target Task ---
+Now perform the same operation for the following target input.
+Additional constraint: Emphasize actionable student habits such as strong passwords and phishing awareness.
+Follow the demonstrated style, preserve exact meaning, and avoid unsupported claims.
+
+Input:
+Write a short paragraph explaining why cybersecurity is important for college students.
+
+Output:"
+AI Response,"For university students, cybersecurity is essential to protect financial credentials, academic research, and personal privacy from digital threats. Relying on shared campus Wi-Fi networks exposes devices to interception unless students practice disciplined security habits. By generating robust passwords, recognizing phishing schemes, and keeping software updated, students protect their academic standing and future careers."
+Evaluator Justification,"Followed demonstrated tone closely, integrating campus Wi-Fi context smoothly."
+

@@ -1,0 +1,102 @@
+﻿PROMPT PERFORMANCE COMPARISON SYSTEM - EXPERIMENT REPORT
+Experiment ID,c35bf4a0-3084-4c3c-b4d3-f8f82af1516c
+Experiment Name,RAM vs ROM Memory Comparison
+Task Category,Question Answering
+Model Used,gemini-2.5-flash
+Timestamp,2026-11-02T06:10:37.813520
+Winning Technique,Structured
+
+TASK SPECIFICATION
+Original Input,What is the difference between RAM and ROM?
+Expected Output,An accurate comparison explaining temporary versus non-volatile memory.
+Additional Instructions,"Include volatility, speed, and read/write characteristics."
+
+QUANTITATIVE PERFORMANCE EVALUATION
+Rank,Prompting Technique,Weighted Score (%),Accuracy (25%),Relevance (20%),Completeness (20%),Clarity (15%),Instruction Following (20%),Execution Time (s),Input Tokens,Output Tokens
+1,Structured,98.4%,9.9,9.8,9.8,9.9,9.8,0.81,145,105
+2,Basic,93.45%,9.6,9.6,9.0,9.5,9.0,0.54,40,62
+3,Example-Based,91.8%,9.4,9.3,8.8,9.4,9.0,0.7,195,45
+
+COMPARATIVE ANALYSIS & WINNER EXPLANATION
+Explanation,"'Structured' achieved the highest weighted score of 98.4% (outperforming 'Basic' at 93.45% by 4.95%). Its competitive advantage was primarily driven by superior Accuracy (+0.3 pts), Relevance (+0.2 pts), Completeness (+0.8 pts), Clarity (+0.4 pts), Instruction following (+0.8 pts). Superior structured breakdown decomposing all 4 required hardware metrics with crisp precision."
+Conclusion,"In this 'Question Answering' evaluation, Structured provided the most effective instruction framing for the model, achieving an aggregate score of 98.4%. Basic prompting yielded an execution time of 0.54s, while Structured and Example-Based techniques traded additional prompt length for higher formatting fidelity and constraint adherence. Results demonstrate that prompt structure directly influences model determinism and output quality."
+
+PROMPT & RESPONSE TRANSCRIPTS
+--- BASIC PROMPT ---
+Generated Prompt,"Answer the following question accurately: Note: Include volatility, speed, and read/write characteristics.
+
+What is the difference between RAM and ROM?"
+AI Response,"RAM (Random Access Memory) is volatile temporary memory that holds data currently in use by the CPU, losing its contents when powered off. ROM (Read-Only Memory) is non-volatile permanent memory that stores essential firmware instructions, such as the system BIOS, and retains data indefinitely without power."
+Evaluator Justification,"Direct, accurate, and scientifically precise comparison of temporary vs permanent storage."
+
+--- STRUCTURED PROMPT ---
+Generated Prompt,"You are a Authoritative Subject Matter Domain Expert.
+
+### Objective:
+Provide an accurate, precise, and educational answer addressing the exact query.
+
+### Context:
+This task belongs to the 'Question Answering' domain. The output must satisfy rigorous academic and technical evaluation standards.
+
+### Step-by-Step Instructions:
+1. Read the input thoroughly to identify the primary entities, facts, or instructions.
+2. Address every explicit constraint or question posed in the input.
+3. Filter out irrelevant details while preserving all critical information.
+4. Formulate the response directly matching the requested structure.
+5. Review the final response against the constraints before concluding.
+
+### Constraints:
+- Maintain strict factual fidelity to the provided input.
+- Do not extrapolate, assume, or hallucinate unsupported claims.
+- Adhere strictly to tone, length, and formatting expectations.
+- Additional constraint: Include volatility, speed, and read/write characteristics.
+
+### Expected Output Format:
+An accurate comparison explaining temporary versus non-volatile memory.
+
+### Quality Requirements:
+Direct answer upfront, factual correctness, clear distinctions, and zero hallucinated claims.
+
+### Input:
+What is the difference between RAM and ROM?
+
+Provide your final, structured response below:"
+AI Response,"RAM and ROM differ fundamentally in volatility, accessibility, and function:
+1. Volatility: RAM is volatile (erased upon power loss); ROM is non-volatile (retains data indefinitely).
+2. Read/Write Capability: RAM supports high-speed read and write operations; ROM is primarily read-only after fabrication.
+3. Purpose: RAM stores active application state and OS runtime data; ROM stores immutable startup firmware (BIOS/UEFI).
+4. Speed: RAM offers gigabyte-scale bandwidth; ROM operates at significantly lower clock frequencies."
+Evaluator Justification,Superior structured breakdown decomposing all 4 required hardware metrics with crisp precision.
+
+--- EXAMPLE-BASED PROMPT ---
+Generated Prompt,"You are a Authoritative Subject Matter Domain Expert.
+Objective: Provide an accurate, precise, and educational answer addressing the exact query.
+
+Study the following demonstrated example(s) to understand the expected formatting, tone, and depth:
+
+--- Example 1 ---
+Input:
+What is the difference between speed and velocity?
+
+Output:
+Speed is a scalar quantity measuring how fast an object moves regardless of direction (e.g., 50 km/h). Velocity is a vector quantity that specifies both the rate of motion and its specific direction (e.g., 50 km/h due North).
+
+--- Example 2 ---
+Input:
+What is the difference between aerobic and anaerobic exercise?
+
+Output:
+Aerobic exercise involves continuous, moderate-intensity activity fueled by oxygen (like jogging or cycling). Anaerobic exercise involves short bursts of high-intensity activity where energy demands exceed available oxygen (like sprinting or heavy weightlifting).
+
+--- Target Task ---
+Now perform the same operation for the following target input.
+Additional constraint: Include volatility, speed, and read/write characteristics.
+Follow the demonstrated style, preserve exact meaning, and avoid unsupported claims.
+
+Input:
+What is the difference between RAM and ROM?
+
+Output:"
+AI Response,"RAM is high-speed, volatile working memory utilized by the processor to execute active programs, requiring continuous electrical power. In contrast, ROM is durable, non-volatile memory used to boot computers by executing factory-installed firmware."
+Evaluator Justification,"Good concise answer matching exemplar structure, though slightly less granular than structured breakdown."
+

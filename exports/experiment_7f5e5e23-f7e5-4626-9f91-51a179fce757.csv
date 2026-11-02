@@ -1,0 +1,98 @@
+﻿PROMPT PERFORMANCE COMPARISON SYSTEM - EXPERIMENT REPORT
+Experiment ID,7f5e5e23-f7e5-4626-9f91-51a179fce757
+Experiment Name,Live Gemini 3.5 Summarization Test
+Task Category,Text Summarization
+Model Used,gemini-3.5-flash
+Timestamp,2026-11-02T06:46:55.930007
+Winning Technique,Example-Based
+
+TASK SPECIFICATION
+Original Input,"Artificial intelligence allows computers to perform tasks that normally require human intelligence, including learning, reasoning, and problem-solving."
+Expected Output,A short and accurate summary preserving the key meaning.
+Additional Instructions,Keep concise and under 25 words.
+
+QUANTITATIVE PERFORMANCE EVALUATION
+Rank,Prompting Technique,Weighted Score (%),Accuracy (25%),Relevance (20%),Completeness (20%),Clarity (15%),Instruction Following (20%),Execution Time (s),Input Tokens,Output Tokens
+1,Example-Based,100.0%,10.0,10.0,10.0,10.0,10.0,4.016,270,21
+2,Basic,97.75%,9.5,10.0,9.5,10.0,10.0,2.539,45,19
+3,Structured,95.0%,9.5,9.5,9.5,9.5,9.5,3.518,278,22
+
+COMPARATIVE ANALYSIS & WINNER EXPLANATION
+Explanation,"'Example-Based' achieved the highest weighted score of 100.0% (outperforming 'Basic' at 97.75% by 2.25%). Its competitive advantage was primarily driven by superior Accuracy (+0.5 pts), Completeness (+0.5 pts). The candidate AI performed flawlessly on this task. Given an already brief source text of 18 words, it effectively condensed the phrasing to 15 words without losing any essential detail, meaning, or nuance. All constraints were met, including word count restrictions, factual accuracy, clarity, and completeness."
+Conclusion,"In this 'Text Summarization' evaluation, Example-Based provided the most effective instruction framing for the model, achieving an aggregate score of 100.0%. Basic prompting yielded an execution time of 2.539s, while Structured and Example-Based techniques traded additional prompt length for higher formatting fidelity and constraint adherence. Results demonstrate that prompt structure directly influences model determinism and output quality."
+
+PROMPT & RESPONSE TRANSCRIPTS
+--- BASIC PROMPT ---
+Generated Prompt,"Summarize the following passage clearly and concisely: Note: Keep concise and under 25 words.
+
+Artificial intelligence allows computers to perform tasks that normally require human intelligence, including learning, reasoning, and problem-solving."
+AI Response,"Artificial intelligence enables computers to perform human tasks such as learning, reasoning, and problem-solving."
+Evaluator Justification,"The candidate AI response provides an exceptional summary of the input text while strictly adhering to the constraint of keeping the response concise and under 25 words (14 words). It captures all core concepts (computers, AI, learning, reasoning, problem-solving). The only minor nuance lost is simplifying 'tasks that normally require human intelligence' to 'human tasks', which slightly shifts the precision of the definition, but is entirely appropriate for a concise summary."
+
+--- STRUCTURED PROMPT ---
+Generated Prompt,"You are a Expert Technical and Editorial Summarizer.
+
+### Objective:
+Distill the provided input text into a clear, faithful, and concise summary that retains core facts.
+
+### Context:
+This task belongs to the 'Text Summarization' domain. The output must satisfy rigorous academic and technical evaluation standards.
+
+### Step-by-Step Instructions:
+1. Read the input thoroughly to identify the primary entities, facts, or instructions.
+2. Address every explicit constraint or question posed in the input.
+3. Filter out irrelevant details while preserving all critical information.
+4. Formulate the response directly matching the requested structure.
+5. Review the final response against the constraints before concluding.
+
+### Constraints:
+- Maintain strict factual fidelity to the provided input.
+- Do not extrapolate, assume, or hallucinate unsupported claims.
+- Adhere strictly to tone, length, and formatting expectations.
+- Additional constraint: Keep concise and under 25 words.
+
+### Expected Output Format:
+A short and accurate summary preserving the key meaning.
+
+### Quality Requirements:
+Maintain 100% factual fidelity; eliminate redundancy; do not invent details.
+
+### Input:
+Artificial intelligence allows computers to perform tasks that normally require human intelligence, including learning, reasoning, and problem-solving.
+
+Provide your final, structured response below:"
+AI Response,"Artificial intelligence enables computers to perform tasks requiring human intelligence, such as learning, reasoning, and problem-solving."
+Evaluator Justification,"The candidate response successfully condenses the provided input sentence while retaining all key concepts (learning, reasoning, problem-solving, and human intelligence capabilities in computers). At 16 words, it comfortably satisfies the length constraint of being under 25 words. Accuracy, relevance, and completeness are exceptionally high because no details were lost or fabricated. A minor caveat is that the original text was already quite brief (19 words), so the candidate response represents light editing rather than substantial summarization, though it perfectly fulfills the task requirements."
+
+--- EXAMPLE-BASED PROMPT ---
+Generated Prompt,"You are a Expert Technical and Editorial Summarizer.
+Objective: Distill the provided input text into a clear, faithful, and concise summary that retains core facts.
+
+Study the following demonstrated example(s) to understand the expected formatting, tone, and depth:
+
+--- Example 1 ---
+Input:
+Photosynthesis is the process used by plants, algae, and certain bacteria to convert light energy into chemical energy, primarily storing it in carbohydrate molecules like sugars synthesized from carbon dioxide and water.
+
+Output:
+Photosynthesis converts light, water, and carbon dioxide into chemical energy stored in plant sugars.
+
+--- Example 2 ---
+Input:
+The water cycle describes the continuous movement of water on, above, and below the surface of the Earth, driven by solar energy through evaporation, condensation, precipitation, and runoff.
+
+Output:
+The water cycle is the continuous solar-driven movement of Earth's water through evaporation, precipitation, and runoff.
+
+--- Target Task ---
+Now perform the same operation for the following target input.
+Additional constraint: Keep concise and under 25 words.
+Follow the demonstrated style, preserve exact meaning, and avoid unsupported claims.
+
+Input:
+Artificial intelligence allows computers to perform tasks that normally require human intelligence, including learning, reasoning, and problem-solving.
+
+Output:"
+AI Response,"Artificial intelligence enables computers to perform tasks requiring human intelligence, including learning, reasoning, and problem-solving."
+Evaluator Justification,"The candidate AI performed flawlessly on this task. Given an already brief source text of 18 words, it effectively condensed the phrasing to 15 words without losing any essential detail, meaning, or nuance. All constraints were met, including word count restrictions, factual accuracy, clarity, and completeness."
+

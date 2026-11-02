@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+backend/venv/
+backend/.pytest_cache/
+*.db
+*.sqlite3
+
+# Node / React
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+*.local
+
+# Environment variables
+.env
+
+# Exports and logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+

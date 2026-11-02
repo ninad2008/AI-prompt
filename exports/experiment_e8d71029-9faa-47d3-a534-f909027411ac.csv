@@ -1,0 +1,98 @@
+﻿PROMPT PERFORMANCE COMPARISON SYSTEM - EXPERIMENT REPORT
+Experiment ID,e8d71029-9faa-47d3-a534-f909027411ac
+Experiment Name,AI Definition Summarization
+Task Category,Text Summarization
+Model Used,gemini-2.5-flash
+Timestamp,2026-11-02T06:10:37.765871
+Winning Technique,Structured
+
+TASK SPECIFICATION
+Original Input,"Artificial intelligence allows computers to perform tasks that normally require human intelligence, including learning, reasoning, and problem-solving."
+Expected Output,A short and accurate summary preserving the key meaning.
+Additional Instructions,Keep under 20 words.
+
+QUANTITATIVE PERFORMANCE EVALUATION
+Rank,Prompting Technique,Weighted Score (%),Accuracy (25%),Relevance (20%),Completeness (20%),Clarity (15%),Instruction Following (20%),Execution Time (s),Input Tokens,Output Tokens
+1,Structured,97.4%,9.8,9.8,9.5,9.8,9.8,0.72,135,16
+2,Example-Based,94.0%,9.4,9.5,9.2,9.4,9.5,0.65,180,15
+3,Basic,88.25%,9.2,9.0,8.5,9.5,8.0,0.48,45,22
+
+COMPARATIVE ANALYSIS & WINNER EXPLANATION
+Explanation,"'Structured' achieved the highest weighted score of 97.4% (outperforming 'Example-Based' at 94.0% by 3.4%). Its competitive advantage was primarily driven by superior Accuracy (+0.4 pts), Relevance (+0.3 pts), Completeness (+0.3 pts), Clarity (+0.4 pts), Instruction following (+0.3 pts). Outstanding fidelity and strict adherence to word budget constraints (14 words). No extraneous words."
+Conclusion,"In this 'Text Summarization' evaluation, Structured provided the most effective instruction framing for the model, achieving an aggregate score of 97.4%. Basic prompting yielded an execution time of 0.48s, while Structured and Example-Based techniques traded additional prompt length for higher formatting fidelity and constraint adherence. Results demonstrate that prompt structure directly influences model determinism and output quality."
+
+PROMPT & RESPONSE TRANSCRIPTS
+--- BASIC PROMPT ---
+Generated Prompt,"Summarize the following passage clearly and concisely: Note: Keep under 20 words.
+
+Artificial intelligence allows computers to perform tasks that normally require human intelligence, including learning, reasoning, and problem-solving."
+AI Response,"Artificial intelligence enables computers to perform human-like tasks such as learning, reasoning, and solving complex problems."
+Evaluator Justification,Accurately captures core tenets. Slightly exceeded 15-word threshold but maintained strong clarity.
+
+--- STRUCTURED PROMPT ---
+Generated Prompt,"You are a Expert Technical and Editorial Summarizer.
+
+### Objective:
+Distill the provided input text into a clear, faithful, and concise summary that retains core facts.
+
+### Context:
+This task belongs to the 'Text Summarization' domain. The output must satisfy rigorous academic and technical evaluation standards.
+
+### Step-by-Step Instructions:
+1. Read the input thoroughly to identify the primary entities, facts, or instructions.
+2. Address every explicit constraint or question posed in the input.
+3. Filter out irrelevant details while preserving all critical information.
+4. Formulate the response directly matching the requested structure.
+5. Review the final response against the constraints before concluding.
+
+### Constraints:
+- Maintain strict factual fidelity to the provided input.
+- Do not extrapolate, assume, or hallucinate unsupported claims.
+- Adhere strictly to tone, length, and formatting expectations.
+- Additional constraint: Keep under 20 words.
+
+### Expected Output Format:
+A short and accurate summary preserving the key meaning.
+
+### Quality Requirements:
+Maintain 100% factual fidelity; eliminate redundancy; do not invent details.
+
+### Input:
+Artificial intelligence allows computers to perform tasks that normally require human intelligence, including learning, reasoning, and problem-solving.
+
+Provide your final, structured response below:"
+AI Response,"Artificial intelligence empowers computers to simulate human learning, reasoning, and problem-solving."
+Evaluator Justification,Outstanding fidelity and strict adherence to word budget constraints (14 words). No extraneous words.
+
+--- EXAMPLE-BASED PROMPT ---
+Generated Prompt,"You are a Expert Technical and Editorial Summarizer.
+Objective: Distill the provided input text into a clear, faithful, and concise summary that retains core facts.
+
+Study the following demonstrated example(s) to understand the expected formatting, tone, and depth:
+
+--- Example 1 ---
+Input:
+Photosynthesis is the process used by plants, algae, and certain bacteria to convert light energy into chemical energy, primarily storing it in carbohydrate molecules like sugars synthesized from carbon dioxide and water.
+
+Output:
+Photosynthesis converts light, water, and carbon dioxide into chemical energy stored in plant sugars.
+
+--- Example 2 ---
+Input:
+The water cycle describes the continuous movement of water on, above, and below the surface of the Earth, driven by solar energy through evaporation, condensation, precipitation, and runoff.
+
+Output:
+The water cycle is the continuous solar-driven movement of Earth's water through evaporation, precipitation, and runoff.
+
+--- Target Task ---
+Now perform the same operation for the following target input.
+Additional constraint: Keep under 20 words.
+Follow the demonstrated style, preserve exact meaning, and avoid unsupported claims.
+
+Input:
+Artificial intelligence allows computers to perform tasks that normally require human intelligence, including learning, reasoning, and problem-solving.
+
+Output:"
+AI Response,"AI enables computers to replicate human learning, logical reasoning, and automated problem-solving."
+Evaluator Justification,Patterned faithfully after few-shot examples with high syntactic precision.
+
