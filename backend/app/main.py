@@ -38,13 +38,32 @@ app.add_middleware(
 # Include API routes
 app.include_router(api_router, prefix="/api")
 
-@app.get("/")
-def root():
-    return {
-        "title": "Prompt Performance Comparison System API",
-        "status": "online",
-        "documentation": "/docs"
-    }
+# Serve frontend build in production if available
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+
+dist_dir = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"
+if (dist_dir / "index.html").exists():
+    if (dist_dir / "assets").exists():
+        app.mount("/assets", StaticFiles(directory=dist_dir / "assets"), name="assets")
+
+    @app.get("/{full_path:path}")
+    def serve_frontend(full_path: str):
+        if full_path.startswith("api") or full_path in ("docs", "redoc", "openapi.json"):
+            return None
+        file_path = dist_dir / full_path
+        if file_path.exists() and file_path.is_file():
+            return FileResponse(file_path)
+        return FileResponse(dist_dir / "index.html")
+else:
+    @app.get("/")
+    def root():
+        return {
+            "title": "Prompt Performance Comparison System API",
+            "status": "online",
+            "documentation": "/docs"
+        }
 
 if __name__ == "__main__":
     import uvicorn

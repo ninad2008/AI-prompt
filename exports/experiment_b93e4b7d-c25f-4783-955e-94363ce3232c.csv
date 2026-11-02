@@ -1,0 +1,102 @@
+﻿PROMPT PERFORMANCE COMPARISON SYSTEM - EXPERIMENT REPORT
+Experiment ID,b93e4b7d-c25f-4783-955e-94363ce3232c
+Experiment Name,prompt engineering
+Task Category,Text Summarization
+Model Used,gemini-3.5-flash-lite
+Timestamp,2026-11-02T07:43:51.659969
+Winning Technique,Structured
+
+TASK SPECIFICATION
+Original Input,What is tokenisation
+Expected Output,detailed
+Additional Instructions,explain in 100 words 
+
+QUANTITATIVE PERFORMANCE EVALUATION
+Rank,Prompting Technique,Weighted Score (%),Accuracy (25%),Relevance (20%),Completeness (20%),Clarity (15%),Instruction Following (20%),Execution Time (s),Input Tokens,Output Tokens
+1,Structured,96.0%,10.0,10.0,9.0,10.0,9.0,6.009,248,116
+2,Example-Based,95.0%,10.0,10.0,9.0,10.0,8.5,2.358,249,106
+3,Basic,92.0%,10.0,10.0,9.0,10.0,7.0,1.721,24,134
+
+COMPARATIVE ANALYSIS & WINNER EXPLANATION
+Explanation,"'Structured' achieved the highest weighted score of 96.0% (outperforming 'Example-Based' at 95.0% by 1.0%). Its competitive advantage was primarily driven by superior Instruction following (+0.5 pts). The candidate response provides an exceptionally clear, accurate, and professional explanation of tokenisation and its role in machine learning and NLP. It is highly relevant and directly answers the prompt. Regarding the word count constraint ('explain in 100 words'), the candidate hits 97 words, which is a strong adherence to the limit. However, against the 'detailed' ground truth criterion, it misses a specific example of how text is split. Overall, the scores reflect a high-quality response with minor room for improvement in granular detail."
+Conclusion,"In this 'Text Summarization' evaluation, Structured provided the most effective instruction framing for the model, achieving an aggregate score of 96.0%. Basic prompting yielded an execution time of 1.721s, while Structured and Example-Based techniques traded additional prompt length for higher formatting fidelity and constraint adherence. Results demonstrate that prompt structure directly influences model determinism and output quality."
+
+PROMPT & RESPONSE TRANSCRIPTS
+--- BASIC PROMPT ---
+Generated Prompt,"Summarize the following passage clearly and concisely: Note: explain in 100 words
+
+What is tokenisation"
+AI Response,"Tokenisation is a fundamental process in Natural Language Processing (NLP) that breaks down a continuous stream of text—such as sentences or paragraphs—into smaller, manageable units called ""tokens."" These tokens typically represent words, subwords, or characters. 
+
+For example, the sentence ""Learning AI is fun"" might be split into the tokens: [""Learning"", ""AI"", ""is"", ""fun""]. 
+
+This process is crucial because machine learning and AI models cannot understand raw text directly. Tokenisation converts text into numerical representations (IDs), allowing algorithms to analyze grammar, understand context, and process human language effectively for tasks like translation, chatbots, and sentiment analysis."
+Evaluator Justification,"The candidate provides an exceptionally clear, accurate, and relevant explanation of tokenisation, perfectly suited for the general topic. It includes a good example and explains the purpose of the process in AI models. However, it fails the strict negative constraint regarding the word count, coming in at around 117 words instead of the requested 100 words maximum. Additionally, the ground truth asked for detail, which the response balanced well against the length, but missed a slight penalty on instruction following."
+
+--- STRUCTURED PROMPT ---
+Generated Prompt,"You are a Expert Technical and Editorial Summarizer.
+
+### Objective:
+Distill the provided input text into a clear, faithful, and concise summary that retains core facts.
+
+### Context:
+This task belongs to the 'Text Summarization' domain. The output must satisfy rigorous academic and technical evaluation standards.
+
+### Step-by-Step Instructions:
+1. Read the input thoroughly to identify the primary entities, facts, or instructions.
+2. Address every explicit constraint or question posed in the input.
+3. Filter out irrelevant details while preserving all critical information.
+4. Formulate the response directly matching the requested structure.
+5. Review the final response against the constraints before concluding.
+
+### Constraints:
+- Maintain strict factual fidelity to the provided input.
+- Do not extrapolate, assume, or hallucinate unsupported claims.
+- Adhere strictly to tone, length, and formatting expectations.
+- Additional constraint: explain in 100 words
+
+### Expected Output Format:
+detailed
+
+### Quality Requirements:
+Maintain 100% factual fidelity; eliminate redundancy; do not invent details.
+
+### Input:
+What is tokenisation
+
+Provide your final, structured response below:"
+AI Response,"Tokenisation is the foundational computational process of breaking down continuous text, such as sentences or documents, into smaller, discrete units called tokens. These tokens typically consist of words, subwords, or individual characters. In the fields of Natural Language Processing and machine learning, tokenisation serves as a critical preliminary step. It transforms raw, unstructured human language into a structured format that numerical algorithms and neural networks can effectively process. By mapping these generated tokens to unique numerical identifiers, models can analyze linguistic patterns, compute semantic relationships, and perform complex tasks like translation, sentiment analysis, and text generation."
+Evaluator Justification,"The candidate response provides an exceptionally clear, accurate, and professional explanation of tokenisation and its role in machine learning and NLP. It is highly relevant and directly answers the prompt. Regarding the word count constraint ('explain in 100 words'), the candidate hits 97 words, which is a strong adherence to the limit. However, against the 'detailed' ground truth criterion, it misses a specific example of how text is split. Overall, the scores reflect a high-quality response with minor room for improvement in granular detail."
+
+--- EXAMPLE-BASED PROMPT ---
+Generated Prompt,"You are a Expert Technical and Editorial Summarizer.
+Objective: Distill the provided input text into a clear, faithful, and concise summary that retains core facts.
+
+Study the following demonstrated example(s) to understand the expected formatting, tone, and depth:
+
+--- Example 1 ---
+Input:
+Photosynthesis is the process used by plants, algae, and certain bacteria to convert light energy into chemical energy, primarily storing it in carbohydrate molecules like sugars synthesized from carbon dioxide and water.
+
+Output:
+Photosynthesis converts light, water, and carbon dioxide into chemical energy stored in plant sugars.
+
+--- Example 2 ---
+Input:
+The water cycle describes the continuous movement of water on, above, and below the surface of the Earth, driven by solar energy through evaporation, condensation, precipitation, and runoff.
+
+Output:
+The water cycle is the continuous solar-driven movement of Earth's water through evaporation, precipitation, and runoff.
+
+--- Target Task ---
+Now perform the same operation for the following target input.
+Additional constraint: explain in 100 words
+Follow the demonstrated style, preserve exact meaning, and avoid unsupported claims.
+
+Input:
+What is tokenisation
+
+Output:"
+AI Response,"Tokenisation is the fundamental computational process of breaking down continuous text, such as sentences or paragraphs, into smaller, manageable units called tokens, which can be individual words, subwords, or characters. In natural language processing and machine learning, these text tokens are subsequently converted into numerical representations, typically integers or vectors, so that algorithms and large language models can efficiently analyze, understand, and process human language. This essential preliminary step enables computers to recognize patterns, calculate semantic relationships, and accurately generate coherent text responses across various artificial intelligence applications."
+Evaluator Justification,"The candidate provides a highly accurate, relevant, and clear explanation of tokenisation that aligns very well with the ground truth and general NLP concepts. The grammar and flow are exceptional. While the ground truth asked for 'detailed', the 100-word constraint naturally limits the depth of detail, but the candidate packed a significant amount of correct information into the short length. The word count is 85 words, which respects the approximate nature of the constraint. Overall, it is a strong performance with minor omissions due strictly to length limitations."
+
